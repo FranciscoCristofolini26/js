@@ -1,0 +1,61 @@
+<%- include('includes/head') %>
+
+<%- include('includes/nav') %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2">
+      
+    </div>
+    <div class="col-lg-8 my-3">
+      <h1 class="display-1 text-center">Criar conta ou Login</h1> 
+      <p class="text-center lead">Faca login ou crie uma conta</p>
+
+      <%- include('includes/messages'); %>
+
+      <div class="row">
+        <div class="col-lg">
+          <h4>faca seu cadastro</h4>
+          <p>se n tem conta, preencha o form</p>
+          <form action="/login/register" method="post">
+            <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+            <div class="form-group">
+              <label for="exampleInputEmail1">seu email</label>
+              <input type="email" class="form-control" name="email">
+
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">sua senha</label>
+              <input type="password" class="form-control" name="password">
+
+            </div>
+            
+            <button type="submit" class="btn btn-primary">criar conta</button>
+          </form>
+        </div>
+        <div class="col-lg">
+          <h4>login no sistema</h4>
+          <p>se ja tem conta, preencha o form</p>
+          <form action="/login/login" method="post">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <div class="form-group">
+              <label for="exampleInputEmail1">seu email</label>
+              <input type="email" class="form-control" name="email">
+
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">sua senha</label>
+              <input type="password" class="form-control" name="password">
+
+            </div>
+            
+            <button type="submit" class="btn btn-primary">entrar</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+<%- include('includes/footer') %>

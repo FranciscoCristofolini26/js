@@ -1,0 +1,25 @@
+<% if (errors && Array.isArray(errors) && errors.length > 0) { %>
+    <div class="row">
+        <div class="col my-3">
+            <div class="alert alert-danger">
+                <% errors.forEach(error => { %>
+                    <%= error.msg %> <br>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+<% } %>
+
+<% if (success && Array.isArray(success) && success.length > 0) { %>
+    <div class="row">
+        <div class="col my-3">
+            <div class="alert alert-success">
+                <% success.forEach(message => { %>
+                    <%= message.msg %> <br>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+<% } %>
+
+<script src="/assets/js/bundle.js"></script>
